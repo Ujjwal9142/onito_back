@@ -54,7 +54,7 @@ exports.registerUser = async (req, res, next) => {
     const response = await newUser.save();
     res
       .status(201)
-      .json({ message: "Registered successfully.", user: response });
+      .json({ message: "User registered successfully.", user: response });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
