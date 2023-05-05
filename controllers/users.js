@@ -54,7 +54,7 @@ exports.registerUser = async (req, res, next) => {
     const response = await newUser.save();
     res
       .status(201)
-      .json({ message: "User registered successfully.", user: response });
+      .json({ message: "Registered successfully.", user: response });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
@@ -66,7 +66,7 @@ exports.registerUser = async (req, res, next) => {
 exports.getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find();
-    res.status(200).json({ users: users });
+    res.status(200).json({ users: users, message: "Here are the users." });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
